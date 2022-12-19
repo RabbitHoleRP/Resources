@@ -62,11 +62,6 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
-        <repository>
-            <id>gump-dev</id>
-            <name>gump.dev</name>
-            <url>https://repo.gump.dev/{repository}</url>
-        </repository>
     </repositories>
 
     <dependencies>
@@ -75,11 +70,6 @@
             <artifactId>paper-api</artifactId>
             <version>1.19.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>dev.gump</groupId>
-            <artifactId>worm</artifactId>
-            <version>3.0.8-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
