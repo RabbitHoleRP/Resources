@@ -4,6 +4,8 @@ main: br.com.rabbithole.resources.Resources
 api-version: 1.19
 authors: [ FelipeSz_19 ]
 description: Resources Plugin for RabbitHole RP
+depend:
+  - Permissions
 commands:
   scam:
     description: Scam Resources in Chunk
