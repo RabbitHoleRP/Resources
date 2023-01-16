@@ -1,6 +1,7 @@
 package br.com.rabbithole.resources.commands.admin;
 
 import br.com.rabbithole.permissions.Permissions;
+import br.com.rabbithole.permissions.enums.Groups;
 import br.com.rabbithole.resources.Resources;
 import br.com.rabbithole.resources.entities.ChunkInformationEntity;
 import br.com.rabbithole.resources.methods.ScamResourcesMethods;
@@ -28,13 +29,7 @@ public class ScamCommand implements CommandExecutor {
             return true;
         }
 
-        /*
-        if(!player.hasPermission("Resources.Admin")) {
-            player.sendMessage(StringUtils.format("<red>Apenas <bold>ADMINISTRADORES</bold> podem executar este Comando!"));
-            return true;
-        }
-         */
-        if (!Permissions.getAPI().hasPermission(player.getName(), "coordinator")) { //TODO: VERIFICAR PERMISSION API
+        if (!Permissions.getAPI().hasPermission(player.getName(), Groups.COORDINATOR)) { //TODO: VERIFICAR PERMISSION API
             player.sendMessage(StringUtils.format("<red>Apenas <bold>ADMINISTRADORES</bold> podem executar este Comando!"));
             return true;
         }
