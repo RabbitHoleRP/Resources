@@ -12,6 +12,11 @@ public final class Resources extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         Bukkit.getConsoleSender().sendMessage(StringUtils.format("<green>Resources iniciado com Sucesso!"));
+        Bukkit.getConsoleSender().sendMessage(StringUtils.format("<green>Bukkit.getVersion() : " + Bukkit.getVersion()));
+        Bukkit.getConsoleSender().sendMessage(StringUtils.format("<green>Bukkit.getServer().getVersion() : " + Bukkit.getServer().getVersion()));
+        Bukkit.getConsoleSender().sendMessage(StringUtils.format("<green>Bukkit.getServer().getMinecraftVersion() : "+ Bukkit.getServer().getMinecraftVersion()));
+        Bukkit.getConsoleSender().sendMessage(StringUtils.format("<green>Bukkit.getServer().getBukkitVersion() : " + Bukkit.getServer().getBukkitVersion()));
+        Bukkit.getConsoleSender().sendMessage(StringUtils.format("<green>Versão Convertida : " + getServerVersion()));
         registers();
     }
 
@@ -32,5 +37,9 @@ public final class Resources extends JavaPlugin {
 
     public static ResourcesAPI getAPI() {
         return API;
+    }
+
+    public static int getServerVersion() {
+        return Integer.parseInt(Bukkit.getServer().getMinecraftVersion().replace(".", ""));
     }
 }

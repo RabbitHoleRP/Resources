@@ -62,6 +62,11 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>rabbithole-repo-snapshots</id>
+            <name>Rabbit Hole</name>
+            <url>https://repo.rabbithole.com.br/snapshots</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -69,6 +74,12 @@
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.19.2-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>br.com.rabbithole</groupId>
+            <artifactId>Permissions</artifactId>
+            <version>1.0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

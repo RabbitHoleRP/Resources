@@ -1,5 +1,6 @@
 package br.com.rabbithole.resources.methods;
 
+import br.com.rabbithole.resources.Resources;
 import br.com.rabbithole.resources.entities.ChunkInformationEntity;
 import org.bukkit.Chunk;
 import org.bukkit.Material;
@@ -13,10 +14,10 @@ public class ScamResourcesMethods {
         return scamResources(player.getLocation().getChunk());
     }
 
-    private static ChunkInformationEntity scamResources(Chunk chunk) {
+    private static ChunkInformationEntity scamResources(Chunk chunk) { //TODO: REFATORAR ESSE MÉTODO ** | TRANSFORMAR EM ASYNC VERIFY
         ChunkInformationEntity chunkInformation = new ChunkInformationEntity(chunk.getX() + "." + chunk.getZ(), new HashMap<>());
         for (int x = 0; x < 16; x++) {
-            for (int y = 0; y < 256; y++) {
+            for (int y = getMinChunkHeight(); y < 256; y++) {
                 for (int z = 0; z < 16; z++) {
                     Block block = chunk.getBlock(x, y, z);
                     if (block.getType().equals(Material.AIR)) continue;
@@ -33,5 +34,9 @@ public class ScamResourcesMethods {
             }
         }
         return chunkInformation;
+    }
+
+    private static int getMinChunkHeight() {
+        return Resources.getServerVersion() >= 1180 ? -64 : 0;
     }
 }
